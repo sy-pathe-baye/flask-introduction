@@ -24,7 +24,8 @@ class Task(db.Model):
     def __repr__(self):
         return f"Todo : {self.name}"
 
-
+with app.app_context():
+    db.create_all()
 
 
 @app.route("/",methods=["GET","POST"])
